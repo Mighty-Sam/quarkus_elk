@@ -4,7 +4,6 @@ import com.elk.entity.embedded.Hobby;
 import io.quarkus.mongodb.panache.common.MongoEntity;
 import io.quarkus.mongodb.panache.reactive.ReactivePanacheMongoEntityBase;
 import io.quarkus.runtime.annotations.RegisterForReflection;
-import io.smallrye.common.constraint.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -27,5 +26,4 @@ public class User extends ReactivePanacheMongoEntityBase {
     private String password;
     private String role;
     private Hobby hobby;
-
 }
