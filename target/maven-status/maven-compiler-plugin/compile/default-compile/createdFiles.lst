@@ -1,0 +1,8 @@
+com\elk\resource\GelfLoggingResource.class
+com\elk\entity\User.class
+com\elk\resource\ExampleResource.class
+com\elk\service\impl\UserServiceImpl.class
+com\elk\service\UserService.class
+com\elk\entity\embedded\Hobby.class
+com\elk\resource\UserResource.class
+com\elk\dto\UserDto.class
