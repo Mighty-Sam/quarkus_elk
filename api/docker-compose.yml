@@ -1,0 +1,36 @@
+version: "3.2"
+services:
+    app:
+      build:
+        context: ../api
+        dockerfile: ../api/src/main/docker/Dockerfile.jvm
+      ports:
+        - 8888:8888
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "200k"
+          max-file: "10"
+      networks:
+        - elk
+      depends_on:
+        - mongodb_container
+
+    mongodb_container:
+      image: mongo:latest
+      restart: always
+      ports:
+        - 27019:27017
+      environment:
+        - MONGO_INITDB_ROOT_USERNAME=admin
+        - MONGO_INITDB_ROOT_PASSWORD=admin
+      volumes:
+        -  mongodb_data:/data/db
+      networks:
+        - elk
+networks:
+  elk:
+    #  需要先手動創建 network
+    external: true
+volumes:
+    mongodb_data: {}
