@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+    order_app:
+      build:
+        context: ../api2
+        dockerfile: ../api2/src/main/docker/Dockerfile.jvm
+      ports:
+        - 7777:7777
+      logging:
+        driver: "json-file"
+        options:
+          max-size: "200k"
+          max-file: "10"
+      networks:
+        - elk
+
+networks:
+  elk:
+    #  需要先手動創建 network
+    external: true

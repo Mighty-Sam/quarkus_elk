@@ -10,7 +10,9 @@
         "logs-generic-default",
         "logstash-*",
         "ecs-logstash-*",
-        "test-log"
+        "test-log",
+        "user-log",
+        "order-log"
       ],
       "privileges": [
         "write",
